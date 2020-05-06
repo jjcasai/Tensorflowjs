@@ -3,10 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { ScanComponent } from './shared/components/scan/scan.component';
+import { CardComponent } from './shared/components/card/card.component';
+import { ProductNamePipe } from './shared/pipes/product-name.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SpinnerComponent,
+    NavbarComponent,
+    FooterComponent,
+    ScanComponent,
+    CardComponent,
+    ProductNamePipe
   ],
   imports: [
     BrowserModule,

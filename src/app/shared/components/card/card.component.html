@@ -1,0 +1,15 @@
+<div class="card ">
+    <div class="card-image" [ngStyle]="{'background-image': 'url(' + getImage()+ ')'}">
+        <a class="btn-floating halfway-fab waves-effect waves-light "><i
+                class="material-icons fav-button-disabled">favorite</i></a>
+    </div>
+    <div class="card-content">
+        <h5>{{product?.className | productName }}</h5>
+        <div class="department-info-container">
+            <div>
+                <p>Probability: <strong>{{product?.probability.toFixed(3)}}</strong></p>
+            </div>
+        </div>
+
+    </div>
+</div>

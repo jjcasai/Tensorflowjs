@@ -1,0 +1,19 @@
+
+.card{
+
+    max-width: 218px;
+}
+
+.card-image{
+    background: url(~/assets/img/department.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 200px;
+}
+.card-content{
+    .department-info-container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}

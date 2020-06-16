@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./materialize-imports.scss";
+
+
+.secondary-text{
+    color: $secondary-color;
+}
+
+.secondary-light-bg{
+    background: $secondary-color-light;
+}
+
+.mr4{
+    margin-right: 4px;
+}

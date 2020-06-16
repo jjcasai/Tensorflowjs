@@ -1,0 +1,26 @@
+<div class="main-container">
+
+    <div class="row">
+        <div class="col s8">
+            <video autoplay playsinline muted id="webcam" width="953" height="425" #video></video>
+
+            <div *ngIf="loading">
+                <app-spinner></app-spinner>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <div class="row">
+
+                <div class="collection">
+                    <a *ngFor="let prediction of predictions" class="collection-item"><span
+                            class="badge">{{prediction.probability.toFixed(3)}} </span>
+                        {{prediction.className}}
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

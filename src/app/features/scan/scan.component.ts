@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import * as tf from '@tensorflow/tfjs';
-import { Prediction } from '../../../prediction.interface';
+import { Prediction } from '../../prediction.interface';
 @Component({
   selector: 'app-scan',
   templateUrl: './scan.component.html',
@@ -28,6 +28,8 @@ export class ScanComponent implements OnInit {
 
     setInterval(async () => {
       this.predictions = await this.model.classify(this.video.nativeElement);
+      console.log(this.predictions);
+      
       await tf.nextFrame();
     }, 3000);
   }
@@ -39,6 +41,9 @@ export class ScanComponent implements OnInit {
       navigator.mediaDevices.getUserMedia({ video: true })
         .then((stream) => {
           vid.srcObject = stream;
+          vid.onloadedmetadata = function(e) {
+            vid.play();
+          };
 
         })
         .catch((err0r) => {

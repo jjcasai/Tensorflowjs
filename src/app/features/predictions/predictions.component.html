@@ -1,0 +1,92 @@
+<div class="row">
+    <h5 class="center-align secondary-text">Linear regression with Tensorflof.js</h5>
+</div>
+<div class="row">
+    <h6 class="center-align">Train a model to predict house prices from living space.</h6>
+
+</div>
+
+<div class="row purple lighten-2 toggle-button-background">
+    <button (click)="toogleVisor()" class=" waves-effect waves-light btn">Toogle Visor</button>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col s6">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <i class="large material-icons secondary-text">
+                        build
+                    </i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h6 class="center-align">Train & Test</h6>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 grey-text">
+                    <span>Training status</span>
+                </div>
+                <div class="col s12 status-divider grey lighten-4">
+                    <span *ngIf="isTraining">Training...</span>
+                    <span *ngIf="isTraining === null">No model trained</span>
+                    <span *ngIf="isTraining === false">Trained unsave Loss: {{trainingLoss}}</span>
+
+
+                </div>
+                <div class="col s12 grey-text">
+                    <span>Testing status</span>
+                </div>
+                <div class="col s12 status-divider grey lighten-4">
+                    <span *ngIf="isTesting===null">Not yet Tested</span>
+                    <span *ngIf="isTesting===true">Loading</span>
+                    <span *ngIf="isTesting===false">Tested Loss:{{testingLoss}}</span>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <button [ngClass]="{disabled: isLoadingFiles}" (click)="training()"
+                    class=" waves-effect mr4 waves-light btn ">train new model</button>
+                <button (click)="testing()" [ngClass]="{disabled: isTraining ===null || isTraining ===true }" class=" waves-effect waves-light btn ">test
+                    model</button>
+            </div>
+            <div class="row">
+                <button class=" waves-effect mr4 waves-light btn disabled">load model</button>
+                <button class=" waves-effect waves-light btn disabled">save model</button>
+            </div>
+        </div>
+
+        <div class="col s6">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <i class="large material-icons secondary-text">
+                        show_chart
+                    </i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <h6 class="">Predict</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 grey-text">
+                    <span>Square fit of living space</span>
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate" value="200" disabled>
+                </div>
+                <div class="col s12">
+                    <button class=" waves-effect waves-light btn disabled">predict house price</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
